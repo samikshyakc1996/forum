@@ -1,15 +1,19 @@
 package com.example.forum.model;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Entity;
 import java.time.LocalDateTime;
-
+@Entity
+@Access(AccessType.PROPERTY)
 public class Post {
 
    private long id;
    private String title;
    private String content;
-    private User author;
+    private User user;
     private LocalDateTime createdAt;
-
+    //private List<Comment> comments
     public long getId() {
         return id;
     }
@@ -22,8 +26,8 @@ public class Post {
         return content;
     }
 
-    public User getAuthor() {
-        return author;
+    public User getUser() {
+        return user;
     }
 
     public LocalDateTime getCreatedAt() {
@@ -42,8 +46,8 @@ public class Post {
         this.content = content;
     }
 
-    public void setAuthor(User author) {
-        this.author = author;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public void setCreatedAt(LocalDateTime createdAt) {

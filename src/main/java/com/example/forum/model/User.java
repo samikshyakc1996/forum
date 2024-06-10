@@ -1,7 +1,19 @@
 package com.example.forum.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+
+@Entity
+//@Access(AccessType.PROPERTY)
 public class User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private long id;
+
     private String username;
     private String email;
     private String password;

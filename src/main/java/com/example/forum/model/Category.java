@@ -3,14 +3,16 @@ package com.example.forum.model;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
-import java.util.List;
+
 @Entity
 @Access(AccessType.PROPERTY)
-public class Topic {
+public class Category {
     private Long id;
     private String name;
-    private List<Post> posts;
+    private String description;
 
+   // @Id
+   //  @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {
         return id;
     }
@@ -19,8 +21,8 @@ public class Topic {
         return name;
     }
 
-    public List<Post> getPosts() {
-        return posts;
+    public String getDescription() {
+        return description;
     }
 
     public void setId(Long id) {
@@ -31,7 +33,7 @@ public class Topic {
         this.name = name;
     }
 
-    public void setPosts(List<Post> posts) {
-        this.posts = posts;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
